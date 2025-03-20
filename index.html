@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header with Nav Tabs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style type="text/css">
+        @media screen and (orientation: landscape) {
+            main {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+
+            footer {
+                display: grid;
+                grid-template-columns: 2.4fr 2.4fr 2.4fr 2.4fr 2.4fr;
+                column-gap: 20px;
+                color: whitesmoke;
+            }
+
+            .navv {
+                display: flex;
+                justify-content: space-between;
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .navv span {
+                padding-left: 10px;
+            }
+
+            .nav-portrait {
+                display: none;
+            }
+
+            .flip-card {
+                width: 600px;
+            }
+        }
+
+        @media screen and (orientation: portrait) {
+
+
+            main {
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            .navv {
+                display: none;
+            }
+
+            .flip-card {
+                width: 300px;
+            }
+        }
+
+        footer {
+            color: maroon;
+        }
+
+        .linear-bg {
+            background: radial-gradient(circle, rgba(229, 255, 0, 0.5), rgba(254, 174, 174, 0.5))
+        }
+
+
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            transform-style: preserve-3d;
+            transition: transform 1s;
+        }
+
+        .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .flip-card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .flip-card-back {
+            background: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateY(180deg);
+            padding: 20px;
+            text-align: center;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+
+
+        }
+
+        .text {
+            text-align: center;
+        }
+
+
+        .footer_heading {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        .footer_sub {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .brand_footer {
+            font-size: 21px;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-bottom: 7px;
+        }
+    </style>
+</head>
+
+<body class=" linear-bg">
+
+    <!-- Header Section -->
+
+    <div class="h1 fw-bold d-flex justify-content-center mt-3 " style="
+    color: black;">
+        SlayBerry🍓
+    </div>
+
+    <!-- nav bar for portrait -->
+    <div class="nav-portrait">
+        <nav class="navbar ">
+            <div class="">
+                <button class="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav nav-tabs ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#contact">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div style=" background-color: black; color: white;">
+        <marquee>Sale is now live on latest summer collection <span class="bi bi-lightning-fill"
+                style="color: gold;"></span></marquee>
+    </div>
+    <!-- nav bar -->
+    <div class="navv container-fluid">
+        <div>
+            <span>
+                <a href="#contact">
+                    Home
+                </a>
+            </span>
+            <span>
+                <a href="#contact">
+                    About us
+                </a>
+            </span>
+            <span>
+                <a href="#contact">
+                    Contact
+                </a>
+            </span>
+            <span>
+                <a href="#contact">
+                    Blog
+                </a>
+            </span>
+        </div>
+
+        <div>
+            <span class="bi-search">
+            </span>
+            <span class="bi-cart3">
+            </span>
+            <span class="bi-person-fill">
+            </span>
+            <span class="bi bi-heart">
+            </span>
+        </div>
+    </div>
+
+
+    <!--Flipping images-->
+    <main class="mt-5 gap-5 container-fluid ">
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://raw.githubusercontent.com/VaishnaviTyagi-123/images/main/men5.jpg" alt="Front Image">
+                </div>
+                <div class="flip-card-back h4">
+                    <a href="men.html">
+                        <h2>
+                            Click for Men's Section
+                        </h2>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2 h6 text">
+                <a href="https://www.amazon.in/s?k=men%27s+wear&rh=n%3A1968024031&dc&crid=1RM8ZVXDR7M09&qid=1742374942&rnid=3576079031&sprefix=men%27s+wear%2Caps%2C252&ref=sr_nr_n_1&ds=v1%3A7vqPtKuRb9kZT7X79pLWpNdvEqqPqb%2BfTZFDrjsd9OI"
+                    target="_blank">
+                    Men's Wear
+                </a>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://raw.githubusercontent.com/VaishnaviTyagi-123/images/main/women3.jpg" alt="Front Image">
+                </div>
+                <div class="flip-card-back h4">
+                    <a href="women.html">
+                        <h2>
+                            Click for Women's Section
+                        </h2>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2 h6  text ">
+                <a href="https://www.amazon.in/s?k=womens+wear&rh=n%3A1953602031&dc&crid=3O3AXYTP3DAUY&qid=1742375141&rnid=3576079031&sprefix=womens+wear%2Caps%2C281&ref=sr_nr_n_1&ds=v1%3AOZ3%2Fc9TL0O21w37BtAB9lr2rSMh%2FQS%2FjsFILnxofbg0"
+                    target="_blank">
+                    Women's Wear
+                </a>
+            </div>
+        </div>
+
+        <div class="flip-card">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <img src="https://raw.githubusercontent.com/VaishnaviTyagi-123/images/main/kid3.jpg" alt="Front Image">
+                </div>
+                <div class="flip-card-back h4">
+                    <a href="kid.html">
+                        <h2>
+                            Click for Kid's Section
+                        </h2>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-2 h6 text">
+                <a href="https://www.amazon.in/s?k=kids+wear&rh=n%3A1571271031%2Cn%3A3723386031&dc&crid=2ZOBIO496HYIJ&qid=1742375274&rnid=3576079031&sprefix=kids+wear%2Caps%2C266&ref=sr_nr_n_4&ds=v1%3ApX3jPcpmfwLDBFrjRRw%2FOGyt2LoEMHUDQwtZCA7B2Uo"
+                    target="_blank">
+                    Kid's Wear
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <section style="height: 50px;">
+
+    </section>
+    <!-- footer code -->
+    <footer id="contact" class="container-fluid">
+        <div class="footer_heading">
+            <div class="brand_footer" style="color: black;">SlayBerry🍓</div>
+            <aside class="big">
+                <span class="bi bi-snapchat" style="color: yellow"></span>
+                <span class=" bi bi-facebook" style="color: blue;"></span>
+                <span class="bi bi-instagram" style="color: magenta;"></span>
+                <span class="bi bi-twitter" style="color: skyblue"></span>
+                <span class="bi bi-whatsapp" style="color: greenyellow"></span>
+            </aside>
+        </div>
+        <div class="footer_heading">
+            <div class="footer_sub">
+                Support
+            </div>
+            <span>Contact Us</span>
+            <span>FAQs</span>
+            <span>Size Guide</span>
+            <span>Shipping & Returns </span>
+        </div>
+        <div class="footer_heading">
+            <div class="footer_sub">Shop</div>
+
+            <span>Men's wear</span>
+            <span>Women's wear</span>
+            <span>Kid's wear</span>
+            <span>Discounts</span>
+
+        </div>
+        <div class="footer_heading">
+            <div class="footer_sub">
+                Company
+            </div>
+            <span>Our Story</span>
+            <span>Career</span>
+            <span>Terms & Conditions</span>
+            <span>Privacy</span>
+
+        </div>
+        <div class="footer_heading">
+
+            <div class="footer_sub">Contact</div>
+            <span> 9696417761 </span>
+            <span>7905983537</span>
+        </div>
+        <br>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
